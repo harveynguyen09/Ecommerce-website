@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Product - Restore</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+       <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                <a href="index.html"><img src="images/logo.png" width="125px"></a> 
+                </div>
+                <nav>
+                    <ul id="menuitem">
+                        <li><a href="home">Home</a></li>
+                        <li><a href="product">Products</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Contact</a></li>
+                        <li><a href="account">Account</a></li>
+                    </ul>
+                </nav>
+                <a href="cart"><img src="images/cart.png" width="30px" height="30px"></a>
+                <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+            </div>
+        </div>
+<!--Accoutn-page-->
+<div class="account-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <img src="images/image1.png" width="100%">
+            </div>
+            <div class="col-2">
+                <div class="form-container">
+                    <div class="form-btn">
+                        <span onclick="register()">Register</span>
+                        <span onclick="login()">Login</span>
+                        <hr id="Indicator">
+                    </div>
+                    <form id="LoginForm" method="post">
+                        <input type="text" placeholder="username" name="login_username">
+                        <input type="password" placeholder="password" name="login_password">
+                        <button type="submit" class="btn">Login</button>
+                        <a href="">Forgot password</a>
+                        <h4 style="color: red;"><%= errors %></h4>
+                  
+                    </form>
+                    <form id="RegForm" method="post" >
+                        <input type="text" placeholder="username" name="username">
+                        <input type="email" placeholder="email" name="email">
+                        <input type="password" placeholder="password" name="password">
+                        <button type="submit" class="btn">Register</button>
+                    
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--Footer-->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="row">
+                    <div class="footer-col-1">
+                        <h3>Download Our App</h3>
+                        <p>Download App for Android and IOS mobile phone.</p>
+                        <div class="app-logo">
+                            <img src="images/play-store.png">
+                            <img src="images/app-store.png">
+                        </div>
+                    </div>
+                    <div class="footer-col-2">
+                        <img src="images/logo-white.png">
+                        <p>Our Purpose is to sustainable make the pleasure and Benefits
+                            of sports accessible to the many.</p>
+                    </div>
+                    <div class="footer-col-3">
+                        <h3>Usefull Links</h3>
+                        <ul>
+                            <li>Coupons</li>
+                            <li>Blog</li>
+                            <li>Return Policy</li>
+                            <li>Join Affiliate</li>
+                        </ul>
+                    </div>
+                    <div class="footer-col-4">
+                        <h3>Follow us</h3>
+                        <ul>
+                            <li>Facebook</li>
+                            <li>Twitter</li>
+                            <li>Instagram</li>
+                            <li>Youtube</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">Copyright 2020-Easy Turtorial</p>
+        </div>
+    </div> 
+
+<!--Menu Toggle-->
+    <script>
+        var menuitem = document.getElementById('menuitem')
+        menuitem.style.maxHeight='0px'
+        
+        function menutoggle(){
+            if(menuitem.style.maxHeight=='0px'){
+                menuitem.style.maxHeight='200px';
+            }
+            else{
+                menuitem.style.maxHeight='0px';
+            }
+        }
+    </script>
+
+<!-----Js for toggle Form---->
+<script>
+    var LoginForm = document.getElementById('LoginForm')
+    var RegForm = document.getElementById('RegForm')
+    var Indicator = document.getElementById('Indicator')
+    function login(){
+        RegForm.style.transform = 'translateX(0px)';
+        LoginForm.style.transform = "translateX(0px)";
+        Indicator.style.transform = "translateX(100px)";
+    }
+    function register(){
+        RegForm.style.transform = 'translateX(300px)';
+        LoginForm.style.transform = "translateX(300px)";
+        Indicator.style.transform = "translateX(0px)";
+    }
+</script>
+</body>
+</html>
